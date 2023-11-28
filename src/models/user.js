@@ -1,4 +1,5 @@
 const { readData, writeDataUser } = require("../controller/BDManager.js");
+const bcrypt = require("bcrypt-nodejs");
 
 class userClass {
   constructor(email, firstName, lastName, password) {
@@ -23,7 +24,7 @@ class userClass {
       email: this.email,
       firstName: this.firstName,
       lastName: this.lastName,
-      password: this.password,
+      password: this.encryptPassword(this.password),
     });
 
     writeDataUser(existingData);
@@ -33,13 +34,12 @@ class userClass {
     return true;
   }
 
-  findById() {
-    const existingData = readData(true);
-    let aux = existingData.user.find((user) => user.email == this.email);
-    if (aux) {
-      return aux;
-    }
-    return false;
+  encryptPassword(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
+  }
+
+  validPassword(password) {
+    return bcrypt.compareSync(password, this.password);
   }
 }
 

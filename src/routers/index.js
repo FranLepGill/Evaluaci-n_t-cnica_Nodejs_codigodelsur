@@ -1,75 +1,35 @@
 const express = require("express");
 const router = express.Router();
-const { registerUser } = require("../controller/userManager");
 const { CreatDB } = require("../middlewares/CreatDB");
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-
-router.post(
-  "/",
-  (req, res, next) => {
-    if (req.isAuthenticated()) return next();
-
-    res.redirect("/login");
-  },
-  (req, res, next) => {}
-);
-
-router.post(
-  "/login",
-  passport.authenticate("local-signup", {
-    successRedirect: "/",
-    failureRedirect: "/login",
-  })
-);
+const { generateToken } = require("../utils/token");
+const { authenticate } = require("../middlewares/authenticate");
+const { registerUser, validateUser } = require("../controller/userManager");
 
 router.post("/register", (req, res) => {
   CreatDB();
-  return res.send(registerUser(req));
+  const respuesta = registerUser(req);
+  return res.send(respuesta);
+});
+
+router.post("/private", (req, res, next) => {
+  if (authenticate(req.headers.authorization)) {
+    res.send({ res: "Acceso permitido" });
+  } else {
+    res.send({ res: "Acceso denegado" });
+  }
+});
+
+router.post("/login", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+
+  if (validateUser(email, password)) {
+    console.log("Usuario logeado");
+    const token = generateToken(email);
+    res.send({ token });
+  } else {
+    res.send({ res: "Email o Password Icorrectos" });
+  }
 });
 
 module.exports = router;
-
-//----------------------------------------------
-
-passport.serializeUser((user, done) => {
-  done(null, user.email);
-});
-
-passport.deserializeUser((id, done) => {
-  userClass.findById(id, (err, user) => {
-    done(err, user);
-  });
-});
-
-passport.use(
-  "local-signup",
-  new LocalStrategy(
-    {
-      usernameField: "email",
-      passwordField: "password",
-      passReqToCallback: true,
-    },
-    (req, email, password, done) => {
-      // const { firstName, lastName } = req.body;
-      // const newUser = new userClass({
-      //   firstName,
-      //   lastName,
-      //   email,
-      //   password,
-      // });
-      // newUser.password = newUser.encryptPassword(password);
-      // if (newUser.findById()) {
-      //   return done(null, false, req.flash("signupMessage", "Email ya registrado"));
-      // }
-      return done(null, {
-        user: {
-          email: "email",
-          firstName: "firstName",
-          lastName: "lastName",
-          password: "password",
-        },
-      });
-    }
-  )
-);

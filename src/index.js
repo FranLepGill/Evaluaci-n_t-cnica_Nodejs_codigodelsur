@@ -7,6 +7,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 
 // middlewares
+require("dotenv").config();
 app.use(morgan("dev"));
 CreatDB();
 app.use(express.json());

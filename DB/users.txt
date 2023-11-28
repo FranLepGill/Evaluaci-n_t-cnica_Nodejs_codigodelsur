@@ -1,10 +1,16 @@
 {
   "user": [
     {
-      "email": "prueba3@pr.p",
-      "firstName": "3212324",
-      "lastName": "pedro",
-      "password": "lopez"
+      "email": "franco@pr.p",
+      "firstName": "pedro",
+      "lastName": "lopez",
+      "password": "$2a$10$B9zqYBvtI/FFAx1ldECCx.WHKRW61ZkiI4HkFrldEr3gTbuuP1dpm"
+    },
+    {
+      "email": "prueba@pr.p",
+      "firstName": "pedro",
+      "lastName": "lopez",
+      "password": "$2a$10$jui11P28QIHDl8zZ1XSjd.3unn8mSSO4hepom4BSPsXc6hX9NgZau"
     }
   ]
 }
