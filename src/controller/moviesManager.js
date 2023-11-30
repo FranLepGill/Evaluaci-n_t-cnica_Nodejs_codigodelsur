@@ -1,7 +1,7 @@
 const axios = require("axios");
 const e = require("express");
 const fs = require("fs");
-const { readData } = require("./BDManager");
+const { readData } = require("./dataBaseManager");
 
 const apiAllMoviesUrl =
   "https://api.themoviedb.org/3/search/movie?api_key=36da3de5cacd19a82e3e8002cd47bee3";

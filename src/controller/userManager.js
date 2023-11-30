@@ -1,6 +1,6 @@
 const e = require("express");
-const { userClass } = require("../models/user");
-const { readData } = require("./BDManager");
+const { UserClass } = require("../models/user");
+const { readData } = require("./dataBaseManager");
 const { all } = require("axios");
 
 // Registra el usuario
@@ -10,7 +10,7 @@ const registerUser = (req) => {
   const firstName = req.body.firstName;
   const lastName = req.body.lastName;
 
-  const user = new userClass(email, firstName, lastName, password);
+  const user = new UserClass(email, firstName, lastName, password);
 
   if (user.saveUser()) {
     return { res: "El usuario se a registrado con existo" };
@@ -35,7 +35,7 @@ const allUsers = () => {
   const users = [];
   for (let index = 0; index < existingData.user.length; index++) {
     const element = existingData.user[index];
-    const userAux = new userClass(
+    const userAux = new UserClass(
       element.email,
       element.firstName,
       element.lastName,

@@ -1,7 +1,7 @@
-const { readData, writeDataUser } = require("../controller/BDManager.js");
+const { readData, writeDataUser } = require("../controller/dataBaseManager.js");
 const bcrypt = require("bcrypt-nodejs");
 
-class userClass {
+class UserClass {
   constructor(email, firstName, lastName, password) {
     this.email = email;
     this.firstName = firstName;
@@ -47,4 +47,4 @@ class userClass {
   }
 }
 
-exports.userClass = userClass;
+exports.UserClass = UserClass;

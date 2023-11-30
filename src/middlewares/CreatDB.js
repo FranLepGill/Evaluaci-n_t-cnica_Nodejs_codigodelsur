@@ -4,7 +4,7 @@ const usersFilePath = "./DB/users.txt";
 const favoriteFilePath = "./DB/favorite.txt";
 
 // Crea la base de datos si no existe
-CreatDB = () => {
+creatDB = () => {
   if (!fs.existsSync(usersFilePath)) {
     let existingUserData = { user: [] };
     let jsonData = JSON.stringify(existingUserData, null, 2);
@@ -17,4 +17,4 @@ CreatDB = () => {
   }
 };
 
-exports.CreatDB = CreatDB;
+exports.creatDB = creatDB;

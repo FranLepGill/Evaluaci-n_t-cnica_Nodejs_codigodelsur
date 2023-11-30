@@ -5,7 +5,7 @@ const apiUrl =
   "https://api.themoviedb.org/3/movie/11?api_key=36da3de5cacd19a82e3e8002cd47bee3";
 
 // solicitud de peliculas a la api themoviedb
-RequestMovies = () => {
+requestMovies = () => {
   axios
     .get(apiUrl)
     .then((response) => {
@@ -19,4 +19,4 @@ RequestMovies = () => {
     });
 };
 
-exports.RequestMovies = RequestMovies;
+exports.requestMovies = requestMovies;

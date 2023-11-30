@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { CreatDB } = require("../middlewares/CreatDB");
+const { creatDB } = require("../middlewares/creatDB");
 const { generateToken, payload } = require("../utils/token");
 const { authenticate } = require("../middlewares/authenticate");
 const { checkEmail, isNotEmpty } = require("../middlewares/CheckFormat");
@@ -14,7 +14,6 @@ const {
   setFavorite,
   getAllFavoriteMovies,
 } = require("../controller/moviesManager");
-const { set } = require("mongoose");
 
 // routes
 router.post(
@@ -31,7 +30,7 @@ router.post(
     } else next();
   },
   (req, res) => {
-    CreatDB();
+    creatDB();
     const respuesta = registerUser(req);
     return res.send(respuesta);
   }
