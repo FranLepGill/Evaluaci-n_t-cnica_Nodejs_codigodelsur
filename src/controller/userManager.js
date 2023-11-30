@@ -3,6 +3,7 @@ const { userClass } = require("../models/user");
 const { readData } = require("./BDManager");
 const { all } = require("axios");
 
+// Registra el usuario
 const registerUser = (req) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -18,15 +19,17 @@ const registerUser = (req) => {
   return { res: "Este email ya esta registrado" };
 };
 
+// Busca el usuario por email
 const findById = (email) => {
   const existingData = readData(true);
-  let aux = existingData.user.find((user) => user.email == this.email);
+  let aux = existingData.user.find((user) => user.email == email);
   if (aux) {
     return aux;
   }
   return null;
 };
 
+// Retorna todos los usuarios
 const allUsers = () => {
   const existingData = readData(true);
   const users = [];
@@ -44,6 +47,7 @@ const allUsers = () => {
   return users;
 };
 
+// Valida el usuario
 const validateUser = (email, password) => {
   let aux = allUsers();
   for (let index = 0; index < aux.length; index++) {

@@ -1,5 +1,51 @@
 {
-  "favorite": [
-    {}
+  "users": [
+    {
+      "email": "pr1@pr.p",
+      "favorite": [
+        {
+          "adult": false,
+          "backdrop_path": "/s0XaJEApAfgMgKUBy6UfOnNTtwR.jpg",
+          "genre_ids": [
+            28,
+            16,
+            878
+          ],
+          "id": 39101,
+          "original_language": "ja",
+          "original_title": "ドラゴンボールZ 地球まるごと超決戦",
+          "overview": "Goku and friends must stop a band of space pirates from consuming fruit from the Tree of Might before it's destructive powers drain Earth's energy.",
+          "popularity": 47.466,
+          "poster_path": "/fDX4Dp8IKvjBAaEb5MOJrGkxWX0.jpg",
+          "release_date": "1990-06-07",
+          "title": "Dragon Ball Z: The Tree of Might",
+          "video": false,
+          "vote_average": 6.492,
+          "vote_count": 507,
+          "suggestionScore": 81,
+          "addedAt": "2023-11-30T07:09:07.914Z"
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hzCxHJ60vTK0Yr397LUTtnTmTvw.jpg",
+          "genre_ids": [
+            99
+          ],
+          "id": 461735,
+          "original_language": "es",
+          "original_title": "Lucha: jugando con lo imposible",
+          "overview": "Known as Lucha, field hockey player Luciana Aymar shares the story of her tumultuous and triumphant journey to become the best one in the world.",
+          "popularity": 2.124,
+          "poster_path": "/wwBuW9R5fM1bG00H7yFZHPpYd59.jpg",
+          "release_date": "2016-04-21",
+          "title": "Lucha: Playing the Impossible",
+          "video": false,
+          "vote_average": 7,
+          "vote_count": 8,
+          "suggestionScore": 99,
+          "addedAt": "2023-11-30T07:10:42.797Z"
+        }
+      ]
+    }
   ]
 }

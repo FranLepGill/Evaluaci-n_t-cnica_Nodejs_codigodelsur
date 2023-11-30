@@ -7,8 +7,10 @@ class userClass {
     this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;
+    this.token = "";
   }
 
+  // Guarda el usuario en la base de datos
   saveUser() {
     const existingData = readData(true);
 
@@ -34,10 +36,12 @@ class userClass {
     return true;
   }
 
+  // Encripta la contraseña
   encryptPassword(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10), null);
   }
 
+  // Valida la contraseña
   validPassword(password) {
     return bcrypt.compareSync(password, this.password);
   }

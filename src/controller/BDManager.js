@@ -2,6 +2,7 @@ const fs = require("fs");
 
 const dataFilePath = "./DB";
 let dataFilePathAux;
+
 // Función para leer datos desde el archivo JSON
 function readData(userOrFavorite) {
   try {
@@ -15,16 +16,17 @@ function readData(userOrFavorite) {
     return JSON.parse(data);
   } catch (err) {
     console.log(err);
-    // Si el archivo no existe o hay un error al leerlo, devolver un objeto vacío
     return {};
   }
 }
 
+// Función para escribir datos en el archivo JSON de usuarios
 function writeDataUser(data) {
   const jsonData = JSON.stringify(data, null, 2);
   fs.writeFileSync(dataFilePath + "/users.txt", jsonData, "utf8");
 }
 
+// Función para escribir datos en el archivo JSON de favoritos
 function writeDataFavorite(data) {
   const jsonData = JSON.stringify(data, null, 2);
   fs.writeFileSync(dataFilePath + "/favorite.txt", jsonData, "utf8");
