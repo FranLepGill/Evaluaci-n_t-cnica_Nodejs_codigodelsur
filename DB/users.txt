@@ -2,81 +2,9 @@
   "user": [
     {
       "email": "franco@pr.p",
-      "firstName": "pedro",
-      "lastName": "lopez",
-      "password": "$2a$10$B9zqYBvtI/FFAx1ldECCx.WHKRW61ZkiI4HkFrldEr3gTbuuP1dpm"
-    },
-    {
-      "email": "prueba@pr.p",
-      "firstName": "pedro",
-      "lastName": "lopez",
-      "password": "$2a$10$jui11P28QIHDl8zZ1XSjd.3unn8mSSO4hepom4BSPsXc6hX9NgZau"
-    },
-    {
-      "email": "Arnoldpr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$Mm6yBIwzC03gyyJzfXkYWeM.clH8EH30Kv5uQl0vYa6z2i/NiPrxu"
-    },
-    {
-      "email": "Arnold@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$icm1C8630tHWuXqVzSGjRO4pLRuCDSBXZxiDa.b1Z1ZZKqWWX0.si"
-    },
-    {
-      "email": "Arnkold@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$fFdxbKjX6VYud0qWQfOevuuu1NRR31DFMv0Lx.xtAf3mQ/wTQ2C8q"
-    },
-    {
-      "email": "Arnkoldpr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$Pm8RQYAO4dhZtvF93XMFeuw0aI/wX8jCMaTMG1NcrX6w0PLgA4jp6"
-    },
-    {
-      "email": "p@a.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$EEYHwWlzQUzWu5q/c1adRegfj1sBHGRbsNsnyt5TfvczRBYt6K8TS"
-    },
-    {
-      "email": "jh@asd.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$FbS6Fefj8l5YrtSlIYMrIua43VTXGig5uf0YMyu1QzISlrjciwwv."
-    },
-    {
-      "email": "prueba2@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$J2TWIJ97/ad9e0I/BZnP3e3EW43kVUPAQwU7FWtp5OFCSobnU6sOS"
-    },
-    {
-      "email": "pr@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$Nn3CMVvFADCpJJ27LrL04uAOLczhFjVG2TTUTT5odBEXjEUAzqeZK"
-    },
-    {
-      "email": "pr1@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$PFJDwLMYeh8qCIC4UhA1O.ptehgIqXLag2TouKNFXFDznGdcsLY0S"
-    },
-    {
-      "email": "pr1sdf@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$XXs.eK8l0HPIRBiF75S8fe/CzyGF6vxmIWIYNksgO/4ApW36CXQxS"
-    },
-    {
-      "email": "pr1sasdasdf@pr.p",
-      "firstName": "juan",
-      "lastName": "guarnizo",
-      "password": "$2a$10$Rk1awP4oE8L5Sck.d6WQoubMRIpZa/H5N5DkY1o/IW3nRSjakg..e"
+      "firstName": "franco",
+      "lastName": "lepratti",
+      "password": "$2a$10$5rXVxjgnl4.J9lmIBFdpD.rDPLQCnFtP2MP693VOLTBKNFy1E7fdK"
     }
   ]
 }

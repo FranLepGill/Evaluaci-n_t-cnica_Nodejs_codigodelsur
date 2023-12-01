@@ -7,7 +7,7 @@ const checkEmail = (email) => {
 
 // Middleware para comprobar que los campos no estén vacíos
 const isNotEmpty = (text) => {
-  if (text == "") {
+  if (text == "" || text == null || text == undefined) {
     return false;
   }
   return true;
