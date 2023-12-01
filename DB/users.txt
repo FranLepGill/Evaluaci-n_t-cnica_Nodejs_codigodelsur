@@ -5,6 +5,24 @@
       "firstName": "franco",
       "lastName": "lepratti",
       "password": "$2a$10$5rXVxjgnl4.J9lmIBFdpD.rDPLQCnFtP2MP693VOLTBKNFy1E7fdK"
+    },
+    {
+      "email": "franco2@pr.p",
+      "firstName": "franco",
+      "lastName": "lepratti",
+      "password": "$2a$10$MAgQ412D4P/mlkWYVGOSjeYfe3tCpoAYBCvjZk4CVqgIuTbBPTmv6"
+    },
+    {
+      "email": "franco3@pr.p",
+      "firstName": "franco",
+      "lastName": "lepratti",
+      "password": "$2a$10$.6SBfriVDhGAi31G7phdceD/z.UtqtBi/dDX8qEazc7HQwKZXcB8u"
+    },
+    {
+      "email": "franco4@pr.p",
+      "firstName": "franco",
+      "lastName": "lepratti",
+      "password": "$2a$10$5VOOWAsHV.Fi2yi4WhCZ3.OJyfFoLWAaw8qs1b8sgBP3ZfPsC7Vie"
     }
   ]
 }

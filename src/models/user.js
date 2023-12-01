@@ -15,7 +15,7 @@ class UserClass {
 
     let aux = existingData.user.find((user) => user.email == this.email);
     if (aux) {
-      console.log("Email ya registrado");
+      // console.log("Email ya registrado");
       return false;
     }
 
@@ -30,7 +30,7 @@ class UserClass {
 
     writeDataUser(existingData);
 
-    console.log(`Guardando email ${this.email} en la base de datos.`);
+    // console.log(`Guardando email ${this.email} en la base de datos.`);
 
     return true;
   }

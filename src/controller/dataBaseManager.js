@@ -6,7 +6,7 @@ let dataFilePathAux;
 // Función para leer datos desde el archivo JSON
 function readData(userOrFavorite) {
   try {
-    console.log(userOrFavorite);
+    // console.log(userOrFavorite);
     if (userOrFavorite) {
       dataFilePathAux = dataFilePath + "/users.txt";
     } else {
@@ -15,7 +15,7 @@ function readData(userOrFavorite) {
     const data = fs.readFileSync(dataFilePathAux, "utf8");
     return JSON.parse(data);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return {};
   }
 }
@@ -51,7 +51,7 @@ function readDataToken() {
     const data = fs.readFileSync(dataFilePathAux, "utf8");
     return JSON.parse(data);
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     return {};
   }
 }

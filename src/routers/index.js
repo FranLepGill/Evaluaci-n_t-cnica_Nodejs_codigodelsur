@@ -70,13 +70,13 @@ router.post(
     const password = req.body.password;
 
     if (validateUser(email, password)) {
-      console.log("Usuario logeado");
+      // console.log("Usuario logeado");
       const token = generateToken(email);
       res.send({ token });
     } else {
       if (findById(email) == null)
         res.send({ res: "Este email no se encuentra registrado" });
-      else res.send({ res: "Password icorrectos" });
+      else res.send({ res: "Password icorrecto" });
     }
   }
 );
@@ -106,7 +106,7 @@ router.get(
     if (req.query.keyword == "") {
       keyword = undefined;
     }
-    console.log("RequestMovies");
+    // console.log("RequestMovies");
     const response = await getAllMovies(keyword);
     res.send(response);
   }
@@ -140,6 +140,7 @@ router.get(
     } else next();
   },
   async (req, res, next) => {
+    creatDB();
     const email = payload(req.headers.authorization);
     const response = await getAllFavoriteMovies(email);
     return res.send(response);

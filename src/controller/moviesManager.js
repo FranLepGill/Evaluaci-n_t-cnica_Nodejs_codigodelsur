@@ -11,7 +11,7 @@ const apiUrl =
 // Get all movies from the API
 const getAllMovies = async (filter) => {
   let url;
-  console.log(filter);
+  // console.log(filter);
   if (filter == undefined) {
     url = apiUrl;
   } else {
@@ -43,6 +43,7 @@ const getAllMovies = async (filter) => {
 // Add a movie to the user's favorites
 const setFavorite = (dataMovie, email) => {
   let data = readData(false);
+  let entre = false;
 
   data = data || {};
   data.users = data.users || [];
@@ -71,13 +72,14 @@ const setFavorite = (dataMovie, email) => {
 
         // Update the data file
         fs.writeFileSync("./DB/favorite.txt", JSON.stringify(data, null, 2));
-        return true;
+        entre = true;
       }
     }
   });
 
-  // Return false if the movie is already a favorite or the user is not found
-  return false;
+  if (entre) {
+    return true;
+  } else return false;
 };
 
 // Get all favorite movies from a user

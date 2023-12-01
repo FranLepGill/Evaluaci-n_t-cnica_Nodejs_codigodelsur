@@ -1,5 +1,9 @@
 // Middleware para comprobar el formato de los campos de los formularios
 const checkEmail = (email) => {
+  if (email == "" || email == null || email == undefined) {
+    return false;
+  }
+
   const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   return patronCorreo.test(email);
@@ -7,7 +11,7 @@ const checkEmail = (email) => {
 
 // Middleware para comprobar que los campos no estén vacíos
 const isNotEmpty = (text) => {
-  if (text == "" || text == null || text == undefined) {
+  if (text == undefined || text == "" || text == null) {
     return false;
   }
   return true;

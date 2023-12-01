@@ -51,7 +51,7 @@ const estaEnListaNegra = (token) => {
   if (estaEnListaNegra) {
     return true;
   } else {
-    console.log("No esta en lista negra");
+    // console.log("No esta en lista negra");
     return false;
   }
 };
