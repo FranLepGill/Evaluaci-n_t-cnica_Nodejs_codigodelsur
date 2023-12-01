@@ -1,43 +1,63 @@
 # Evaluacion_tecnica_Nodejs_codigodelsur
 
-Intrucciones de uso:
+## Intrucciones de uso:
 
-la api se inicializa con el comando: npm run dev;
+### Inicialización 🔧 
+```
+npm run dev
+```
 
-la Api cuenta con 6 Endpoints:
+## Endpoints:
 
-"url/register": se tiene que enviar un en el body del mensaje, los parametros:
-
+### register
+```
+"url/register" 
+```
+_se tiene que enviar un en el body del mensaje, los parametros:_
+```
   {
       "email": "prueba@pr.p",
       "firstName": "franco",
       "lastName": "lepratti",
       "password":  "12345"
   }
+```
   
-  el mail tiene que ser valido, al igual que mandar una contrasenia con mas de 5 digitos.
-  
-  si no se relaiza un registro no se podra acceder a la mayoria de las funciones.
+  * el mail tiene que ser valido, 
+  * la contrasenia tini que tener mas 5 digitos.
+  * si no se relaiza un registro no se podra acceder a la mayoria de las funciones.
 
-"url/login": se envia en el body, tras haberte registrado, el mail y la contrasenia:
-
+### login
+```
+"url/login"
+```
+_Se envia en el body, tras haberte registrado, el mail y la contrasenia:_
+```
   {
       "email": "franco2@pr.p",
       "password":  "12345"
   }
-  
-  si son correctos, te retornara con token con el que podras acceder al resto de funcionalidades,
-  poniendolo en el header en un atributo de nombre authorization.
+```
+  _si son correctos, te retornara con token con el que podras acceder al resto de funcionalidades,
+  poniendolo en el header en un atributo de nombre authorization._
 
-"url/getMovies": si mandas el token correcto, te traera todas las peliculas, 
-  ademas puedes pasar una palabra clave para que la busqueda sea por esa palabra de la siguiente forma:
-  
+### movies
+```
+"url/movies" 
+```
+_si mandas el token correcto, te traera todas las peliculas, 
+  ademas puedes pasar una palabra clave para que la busqueda sea por esa palabra de la siguiente forma:_
+  ```
   "url/getMovies?keyword=<palabra clave>"
-  
-  hacer cualquiera de los dos pedidos traera una lista de Movies ordenadas de mayor a menor.
+  ```
+  _hacer cualquiera de los dos pedidos traera una lista de Movies ordenadas de mayor a menor._
 
-"url/setFavorite": si mandas el token y en el body mandas una de las peliculas en el formato en que la resiviste, esta se aniadira a tu lista de favoritos
-  
+### Set Favoritos
+  ```
+"url/setFavorite"
+  ```
+_Si mandas el token y en el body mandas una de las peliculas en el formato en que la resiviste, esta se aniadira a tu lista de favoritos_
+  ```
   {
       "adult": false,
       "backdrop_path": "/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
@@ -61,8 +81,15 @@ la Api cuenta con 6 Endpoints:
       "vote_count": 7288,
       "suggestionScore": 89
   }
+  ```
+### Get Favorite
+```
+"url/getFavorite" 
+```
+_Si envias tu token correctamente traera una lista de todas las peliculas que agregaste a favoritos._
 
-"url/getFavorite": si envias tu token correctamente traera una lista de todas las peliculas que agregaste a favoritos.
-
-"url/logout": si envias un token valido te lo inavilita.
-
+### logout
+```
+"url/logout" 
+```
+_si envias un token valido te lo inavilita._
