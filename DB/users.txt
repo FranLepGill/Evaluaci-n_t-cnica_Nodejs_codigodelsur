@@ -65,6 +65,18 @@
       "firstName": "juan",
       "lastName": "guarnizo",
       "password": "$2a$10$PFJDwLMYeh8qCIC4UhA1O.ptehgIqXLag2TouKNFXFDznGdcsLY0S"
+    },
+    {
+      "email": "pr1sdf@pr.p",
+      "firstName": "juan",
+      "lastName": "guarnizo",
+      "password": "$2a$10$XXs.eK8l0HPIRBiF75S8fe/CzyGF6vxmIWIYNksgO/4ApW36CXQxS"
+    },
+    {
+      "email": "pr1sasdasdf@pr.p",
+      "firstName": "juan",
+      "lastName": "guarnizo",
+      "password": "$2a$10$Rk1awP4oE8L5Sck.d6WQoubMRIpZa/H5N5DkY1o/IW3nRSjakg..e"
     }
   ]
 }

@@ -7,7 +7,6 @@ class UserClass {
     this.firstName = firstName;
     this.lastName = lastName;
     this.password = password;
-    this.token = "";
   }
 
   // Guarda el usuario en la base de datos

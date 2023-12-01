@@ -1,15 +1,9 @@
 const e = require("express");
 const { UserClass } = require("../models/user");
 const { readData } = require("./dataBaseManager");
-const { all } = require("axios");
 
 // Registra el usuario
-const registerUser = (req) => {
-  const email = req.body.email;
-  const password = req.body.password;
-  const firstName = req.body.firstName;
-  const lastName = req.body.lastName;
-
+const registerUser = (email, password, firstName, lastName) => {
   const user = new UserClass(email, firstName, lastName, password);
 
   if (user.saveUser()) {

@@ -13,4 +13,12 @@ const isNotEmpty = (text) => {
   return true;
 };
 
-module.exports = { checkEmail, isNotEmpty };
+const checkPassword = (password) => {
+  if (password.length < 5) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+module.exports = { checkEmail, isNotEmpty, checkPassword };

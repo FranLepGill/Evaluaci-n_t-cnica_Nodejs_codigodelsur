@@ -32,8 +32,34 @@ function writeDataFavorite(data) {
   fs.writeFileSync(dataFilePath + "/favorite.txt", jsonData, "utf8");
 }
 
+function writeDataToken(token) {
+  let data = fs.readFileSync(dataFilePath + "/blackListToken.txt", "utf8");
+
+  data = data || [];
+  data = JSON.parse(data);
+  data.push({
+    token: token,
+  });
+
+  const jsonData = JSON.stringify(data, null, 2);
+  fs.writeFileSync(dataFilePath + "/blackListToken.txt", jsonData, "utf8");
+}
+
+function readDataToken() {
+  try {
+    dataFilePathAux = dataFilePath + "/blackListToken.txt";
+    const data = fs.readFileSync(dataFilePathAux, "utf8");
+    return JSON.parse(data);
+  } catch (err) {
+    console.log(err);
+    return {};
+  }
+}
+
 module.exports = {
   readData,
   writeDataFavorite,
   writeDataUser,
+  writeDataToken,
+  readDataToken,
 };

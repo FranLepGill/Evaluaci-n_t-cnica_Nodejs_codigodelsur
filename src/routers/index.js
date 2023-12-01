@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const { creatDB } = require("../middlewares/creatDB");
-const { generateToken, payload } = require("../utils/token");
+const { generateToken, payload, deslogear } = require("../utils/token");
 const { authenticate } = require("../middlewares/authenticate");
-const { checkEmail, isNotEmpty } = require("../middlewares/CheckFormat");
+const {
+  checkEmail,
+  isNotEmpty,
+  checkPassword,
+} = require("../middlewares/CheckFormat");
 const {
   registerUser,
   validateUser,
@@ -14,6 +18,7 @@ const {
   setFavorite,
   getAllFavoriteMovies,
 } = require("../controller/moviesManager");
+const e = require("express");
 
 // routes
 router.post(
@@ -27,11 +32,18 @@ router.post(
       res.send({ res: "firstName vacia" });
     } else if (!isNotEmpty(req.body.lastName)) {
       res.send({ res: "lastName vacia" });
+    } else if (checkPassword(req.body.password)) {
+      res.send({ res: "Password debe tener al menos 5 caracteres" });
     } else next();
   },
   (req, res) => {
     creatDB();
-    const respuesta = registerUser(req);
+    const respuesta = registerUser(
+      req.body.email,
+      req.body.password,
+      req.body.firstName,
+      req.body.lastName
+    );
     return res.send(respuesta);
   }
 );
@@ -69,6 +81,20 @@ router.post(
   }
 );
 
+router.post(
+  "/logout",
+  (req, res, next) => {
+    if (!authenticate(req.headers.authorization)) {
+      res.send({ res: "Nesesita estar logeado" });
+    } else next();
+  },
+  (req, res) => {
+    const token = req.headers.authorization;
+    deslogear(token);
+    res.send({ res: "Usuario deslogeado" });
+  }
+);
+
 router.get(
   "/movies",
   (req, res, next) => {
@@ -96,6 +122,7 @@ router.post(
     } else next();
   },
   async (req, res, next) => {
+    creatDB();
     const email = payload(req.headers.authorization);
     if (setFavorite(req.body, email)) {
       res.send({ res: "Agregada a favoritos" });

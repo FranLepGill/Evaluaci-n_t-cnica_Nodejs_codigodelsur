@@ -1,12 +1,15 @@
 const jwt = require("jsonwebtoken");
-const { decodeToken } = require("react-jwt");
-
+const {
+  readData,
+  writeDataToken,
+  readDataToken,
+} = require("../controller/dataBaseManager.js");
 //Genera un token en base a un texto secreto, tmb establece parametros que se pondran en el token
-const generateToken = (text) => {
+const generateToken = (email) => {
   const token = jwt.sign(
     {
       data: Math.random(),
-      email: text,
+      email: email,
     },
     process.env.JWT_SECRET,
     {
@@ -35,4 +38,28 @@ const payload = (token) => {
   return payload.email;
 };
 
-module.exports = { generateToken, verifyToken, payload };
+//Deslogea al usuario
+const deslogear = (token) => {
+  writeDataToken(token);
+};
+
+//Verifica si el token esta en la lista negra
+const estaEnListaNegra = (token) => {
+  const data = readDataToken();
+  const tokenList = data || [];
+  const estaEnListaNegra = tokenList.some((t) => t.token == token);
+  if (estaEnListaNegra) {
+    return true;
+  } else {
+    console.log("No esta en lista negra");
+    return false;
+  }
+};
+
+module.exports = {
+  generateToken,
+  verifyToken,
+  payload,
+  estaEnListaNegra,
+  deslogear,
+};
