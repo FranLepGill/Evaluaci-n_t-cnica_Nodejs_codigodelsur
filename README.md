@@ -7,7 +7,7 @@
 npm run dev
 ```
 
-## Endpoints 📦:
+## Endpoints
 
 ### register
 ```
